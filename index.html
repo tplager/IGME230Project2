@@ -3,12 +3,17 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type = "text/css" href = "styles.css">
-        <title>Movie Searcher</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
+        crossorigin="anonymous">
+        <title>Movie Searcher Home</title>
         <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>>
         <script src = "main.js"></script>
     </head>
     <body>
-        <h1>Movie Searcher</h1>
+            <i id = "leftFilm" class ="fas fa-film"></i>
+            <h1>Movie Searcher</h1>
+            <i id = "rightFilm" class ="fas fa-film"></i>
         <main>
             <h2>Search for a Movie</h2>
 
@@ -18,7 +23,17 @@
             <h3 id = "Year">Year</h3>
             <input id="yearSearch" type="text" placeholder="Search.." name="searchYear">
 
-            <button id="submit" type="submit">Submit</button>
+            <h3 id = "Type">Type</h3>
+            <div>
+                <input id="typeSearch" type="text" placeholder="Search.." name="searchType">
+                <button id = "dropdown">Type</button>
+                <div>
+                    
+                </div>
+            </div>
+            
+
+            <button class = "button" id="submit" type="submit">Submit</button>
 
         </main>
     </body>

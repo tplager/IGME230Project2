@@ -1,3 +1,23 @@
 body {
     background-color: white;
 }
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+#leftFilm{
+    font-size: 48px;
+}
+
+#rightFilm{
+    font-size: 48px;
+}
+
+.container{
+    text-align: center;
+}
