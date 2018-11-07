@@ -15,7 +15,7 @@ function setEvents(){
     }
 }
 	
-let displayTitle = "";
+let displayTerm = "";
 let displayYear = "";
 const SEARCH_URL = "index.html";
 const RESULTS_URL = "results.html";
@@ -76,7 +76,7 @@ function resultsLoaded(){
     let obj = localStorage.getItem(listID);
     obj = JSON.parse(obj);
 
-    let titleID = "tlp6760-title";
+    let titleID = "tlp6760-term";
     displayTerm = localStorage.getItem(titleID);
 
     console.log("obj = " + obj);
@@ -125,7 +125,7 @@ function getMovieData() {
     title = title.trim();
     title = encodeURIComponent(title);
 
-    if(title.length < 1) return;
+    //if(title.length < 1) return;
 
     while (title.includes("%20")){
         title = title.replace("%20","+");
