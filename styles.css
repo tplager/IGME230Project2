@@ -10,14 +10,31 @@ h2 {
     text-align: center;
 }
 
+h3{
+    text-align: center;
+}
+
 #leftFilm{
-    font-size: 48px;
+    font-size: 60px;
+    float: left;
+    position: relative;
 }
 
 #rightFilm{
-    font-size: 48px;
+    font-size: 60px;
+    float: right;
+    position: relative;
 }
 
+#dropdown{
+    float: right;
+}
+#submit{
+    margin: 15px;
+}
+.searchBar{
+    margin-left: 675px;
+}
 .container{
     text-align: center;
 }
