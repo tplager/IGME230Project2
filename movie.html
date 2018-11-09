@@ -21,10 +21,10 @@
 <body>
     <header class="text-center container-fluid">
         <i id="leftFilm" class="fas fa-film float-left ml-2 mt-2"></i>
-        <h1 class="d-inline-block mt-3">Movie Searcher</h1>
+        <h1 class="d-inline-block mt-3 display-4">Movie Searcher</h1>
         <i id="rightFilm" class="fas fa-film float-right mr-2 mt-2"></i>
     </header>
-    <nav class="navbar navbar-expand navbar-dark bg-danger">
+    <nav class="navbar navbar-expand navbar-dark bg-danger mt-3">
         <ul class="nav navbar-nav container-fluid row text-center">
             <li class="nav-item col-sm"><a class="nav-link" href="index.html">Search <span class="sr-only">(current)</span></a></li>
             <li class="nav-item col-sm"><a class="nav-link" href="results.html">Listing</a></li>
@@ -33,8 +33,11 @@
         </ul>
     </nav>
     <main>
-        <h2 id="movieTitle">Movie Title</h2>
-        
+        <section class="mb-4 text-center">
+
+            <h2 id="movieTitle" style="text-decoration:underline;">Movie Title</h2>
+        </section>
+
         <div class="container"></div>
         <button class="button" id="resultsPage" type="submit">Go To Results</button>
         <button class="button" id="searchPage" type="submit">Go To Search</button>

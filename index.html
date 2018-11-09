@@ -20,7 +20,7 @@
 <body>
     <header class="text-center container-fluid">
         <i id="leftFilm" class="fas fa-film float-left ml-2 mt-2"></i>
-        <h1 class="d-inline-block mt-3">Movie Searcher</h1>
+        <h1 class="d-inline-block mt-3 display-4">Movie Searcher</h1>
         <i id="rightFilm" class="fas fa-film float-right mr-2 mt-2"></i>
     </header>
     <nav class="navbar navbar-expand navbar-dark bg-danger mt-3">
@@ -31,17 +31,25 @@
             <li class="nav-item col-sm"><a class="nav-link" href="documentation.html">Documentation</a></li>
         </ul>
     </nav>
-    <main>
-        <h2>Search for a Movie or Show</h2>
-        <h5>A title is required to search, year is not</h5>
-        <h3 id="Title">Title</h3>
-        <input class="searchBar" id="titleSearch" type="text" placeholder="Search.." name="searchTitle">
-
-        <h3 id="Year">Year</h3>
-        <input class="searchBar" id="yearSearch" type="text" placeholder="Search.." name="searchYear">
-
-        <center><button class="button" id="submit" type="submit">Submit</button></center>
-
+    <main class="container-fluid d-inline align-middle">
+        <section class="text-center mt-5 mb-5">
+            <h2>Search for a Movie or Show</h2>
+            <h5 class="mt-4">A title is required to search</h5>
+            <h5 class="mb-4">A year is not required</h5>
+        </section>
+        <section class="mb-4 text-center row">
+            <div class="col">
+                <h2 id="Title">Title</h3>
+                    <input class="searchBar" id="titleSearch" type="text" placeholder="Search.." name="searchTitle">
+            </div>
+            <div class="col">
+                <h2 id="Year">Year</h3>
+                    <input class="searchBar" id="yearSearch" type="text" placeholder="Search.." name="searchYear">
+            </div>
+        </section>
+        <div class="container-fluid text-center">
+            <button class="button btn btn-danger btn-lg" id="submit" type="submit">Submit</button>
+        </div>
     </main>
 </body>
 
