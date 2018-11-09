@@ -22,7 +22,7 @@ const RESULTS_URL = "results.html";
 const MOVIE_URL = "movie.html";
 
 function getData() {
-    const OMDB_URL = "http://www.omdbapi.com/?apikey=fbf8855f&";
+    const OMDB_URL = "https://www.omdbapi.com/?apikey=fbf8855f&";
 
     url = OMDB_URL;
 
@@ -115,7 +115,7 @@ function resultsLoaded() {
 }
 
 function getMovieData() {
-    const OMDB_URL = "http://www.omdbapi.com/?apikey=fbf8855f&";
+    const OMDB_URL = "https://www.omdbapi.com/?apikey=fbf8855f&";
 
     url = OMDB_URL;
 
