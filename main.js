@@ -157,7 +157,7 @@ function loadMovie(obj) {
     
     // Image styling
     img.style.cssFloat = "right";
-    //img.style.display = "block";
+    img.style.display = "block";
     //img.style.width = "300px";
     //img.style.margin = "auto";
 
@@ -175,6 +175,7 @@ function loadMovie(obj) {
         // Creating the list of ratings
         let ratings = document.createElement("ul");
         ratings.className = "list-group w-25";
+        
 
         // Adding ratings to the list
         let rottenTomatoes = document.createElement("li");
@@ -217,38 +218,49 @@ function loadMovie(obj) {
     main.appendChild(description);
 
     // Description styling
-    //description.style.width = "400px";
-    //description.style.cssFloat = "right";
-    //description.style.marginRight = "30px";
-    description.style.border = "solid";
+    description.style.width = "600px";
+    description.style.border = "1px solid";
+    description.style.borderColor = "rgba(0,0,0,0.125)";
+    description.style.borderRadius = ".25rem";
+    description.style.backgroundColor = "#FFF";
+    description.style.marginTop = "5px";
+    description.style.marginBottom = "5px";
+    description.style.padding = "5px";
 
     let info = document.createElement("section");
     info.className = "row";
+    info.style.border = "1px solid";
+    info.style.borderColor = "rgba(0,0,0,0.125)";
+    info.style.borderRadius = ".25rem";
+    info.style.backgroundColor = "#FFF";
+    info.style.width = "600px";
+    info.style.margin = "0";
+    info.style.padding = "5px";
 
-    let esrbRating = document.createElement("li");
+    let esrbRating = document.createElement("p");
     esrbRating.className = "col";
-    esrbRating.innerHTML = obj.Rated;
+    esrbRating.innerHTML = "<u>ESRB</u>: " + obj.Rated;
     info.appendChild(esrbRating);
 
-    let releaseYear = document.createElement("li");
+    let releaseYear = document.createElement("p");
     releaseYear.className = "col";
-    releaseYear.innerHTML = obj.Year;
+    releaseYear.innerHTML = "<u>Release Date</u>: " + obj.Year;
     info.appendChild(releaseYear);
 
     let spacer = document.createElement("div");
     spacer.className = "w-100";
     info.appendChild(spacer);
 
-    let runtime = document.createElement("li");
+    let runtime = document.createElement("p");
     runtime.className = "col";
     info.appendChild(runtime);
-    runtime.innerHTML = obj.Runtime;
+    runtime.innerHTML = "<u>Runtime</u>: " + obj.Runtime;
 
     if (obj.Production != null) {
 
-        let studio = document.createElement("li");
+        let studio = document.createElement("p");
         studio.className = "col";
-        studio.innerHTML = obj.Production;
+        studio.innerHTML = "<u>Studio</u>: " + obj.Production;
         info.appendChild(studio);
     }
     else {
