@@ -153,25 +153,50 @@ function loadMovie(obj) {
 
     let img = document.createElement("img");
     img.src = obj.Poster;
+    img.className = "poster";
+    
+    // Image styling
+    img.style.cssFloat = "right";
+    //img.style.display = "block";
+    //img.style.width = "300px";
+    //img.style.margin = "auto";
 
     main.appendChild(img);
     if (obj.Ratings.length > 1) {
 
+        // Creating ratings header
         let ratingsTitle = document.createElement("h3");
         ratingsTitle.innerHTML = "Ratings";
         main.appendChild(ratingsTitle);
 
+        // Ratings title styling
+       // ratingsTitle.style.paddingLeft = "400px";
+
+        // Creating the list of ratings
         let ratings = document.createElement("ul");
+        ratings.className = "list-group w-25";
+
+        // Adding ratings to the list
         let rottenTomatoes = document.createElement("li");
+        rottenTomatoes.className = "list-group-item";
         rottenTomatoes.innerHTML = "Rotten Tomatoes: " + obj.Ratings[1].Value;
+
         let imdb = document.createElement("li");
+        imdb.className = "list-group-item";
         imdb.innerHTML = "IMDb: " + obj.Ratings[0].Value;
+
         let metacritic = document.createElement("li");
         metacritic.innerHTML = "Metacritic: " + obj.Ratings[2].Value;
+        metacritic.className = "list-group-item";
+
+        // Appending children to ratings list
         ratings.appendChild(rottenTomatoes);
         ratings.appendChild(imdb);
         ratings.appendChild(metacritic);
         main.appendChild(ratings);
+
+        // Ratings styling
+        //ratings.style.paddingLeft = "400px";
     }
     else {
         let ratingsTitle = document.createElement("h3");
@@ -191,20 +216,39 @@ function loadMovie(obj) {
 
     main.appendChild(description);
 
-    let info = document.createElement("ul");
+    // Description styling
+    //description.style.width = "400px";
+    //description.style.cssFloat = "right";
+    //description.style.marginRight = "30px";
+    description.style.border = "solid";
+
+    let info = document.createElement("section");
+    info.className = "row";
+
     let esrbRating = document.createElement("li");
+    esrbRating.className = "col";
     esrbRating.innerHTML = obj.Rated;
+    info.appendChild(esrbRating);
+
     let releaseYear = document.createElement("li");
+    releaseYear.className = "col";
     releaseYear.innerHTML = obj.Year;
+    info.appendChild(releaseYear);
+
+    let spacer = document.createElement("div");
+    spacer.className = "w-100";
+    info.appendChild(spacer);
+
     let runtime = document.createElement("li");
+    runtime.className = "col";
+    info.appendChild(runtime);
     runtime.innerHTML = obj.Runtime;
+
     if (obj.Production != null) {
 
         let studio = document.createElement("li");
+        studio.className = "col";
         studio.innerHTML = obj.Production;
-        info.appendChild(esrbRating);
-        info.appendChild(releaseYear);
-        info.appendChild(runtime);
         info.appendChild(studio);
     }
     else {
