@@ -18,9 +18,19 @@
 </head>
 
 <body>
-    <i id="leftFilm" class="fas fa-film"></i>
-    <h1>Movie Searcher</h1>
-    <i id="rightFilm" class="fas fa-film"></i>
+    <header class="text-center container-fluid">
+        <i id="leftFilm" class="fas fa-film float-left ml-2 mt-2"></i>
+        <h1 class="d-inline-block mt-3">Movie Searcher</h1>
+        <i id="rightFilm" class="fas fa-film float-right mr-2 mt-2"></i>
+    </header>
+    <nav class="navbar navbar-expand navbar-dark bg-danger mt-3">
+        <ul class="nav navbar-nav container-fluid row text-center">
+            <li class="nav-item active col-sm"><a class="nav-link active" href="index.html">Search <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item col-sm"><a class="nav-link" href="results.html">Listing</a></li>
+            <li class="nav-item col-sm"><a class="nav-link" href="movie.html">Result</a></li>
+            <li class="nav-item col-sm"><a class="nav-link" href="documentation.html">Documentation</a></li>
+        </ul>
+    </nav>
     <main>
         <h2>Search for a Movie or Show</h2>
         <h5>A title is required to search, year is not</h5>
