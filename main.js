@@ -306,13 +306,13 @@ function tickPages(){
         pageIndex = 1; 
     }
 
-    if (this.id = "leftArrow"){
+    if (this.id == "leftArrow"){
         if (pageIndex != 1){
-            pageIndex-=1;
+            pageIndex--;
         }
     }
-    else if(this.id = "rightArrow"){
-        pageIndex+=1;
+    else if(this.id == "rightArrow"){
+        pageIndex++;
     }
 
     localStorage.setItem("tlp6760-pageIndex", pageIndex);
@@ -325,23 +325,17 @@ function loadNewPage(){
 
     url = OMDB_URL;
 
-    let title = localStorage.getItem("tlp6760-term");
+    let term = localStorage.getItem("tlp6760-term");
 
     let year = localStorage.getItem("tlp6760-year");
 
     pageIndex = localStorage.getItem("tlp6760-pageIndex");
 
-    if (title.length < 1) return;
-
-    while (title.includes("%20")) {
-        title = title.replace("%20", "+");
-    }
-
     if (year.length < 1) {
-        url += "s=" + title + "&page=" + pageIndex;
+        url += "s=" + term + "&page=" + pageIndex;
     }
     else {
-        url += "s=" + title + "&y=" + year + "&page=" + pageIndex;
+        url += "s=" + term + "&y=" + year + "&page=" + pageIndex;
     }
 
     console.log(url);
