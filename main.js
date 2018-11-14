@@ -6,6 +6,8 @@ function setEvents() {
     }
     else if (document.querySelector("#resultsTitle") != null) {
         document.querySelector("#searchPage").onclick = goToSearch;
+        document.querySelector("#leftArrow").onclick = tickPages;
+        document.querySelector("#rightArrow").onclick = tickPages;
         resultsLoaded();
     }
     if (document.querySelector("#movieTitle") != null) {
@@ -17,6 +19,7 @@ function setEvents() {
 
 let displayTerm = "";
 let displayYear = "";
+let pageIndex = undefined; 
 const SEARCH_URL = "index.html";
 const RESULTS_URL = "results.html";
 const MOVIE_URL = "movie.html";
@@ -31,6 +34,8 @@ function getData() {
 
     let year = document.querySelector("#yearSearch").value;
     displayYear = year;
+
+    pageIndex = 1;
 
     title = title.trim();
     title = encodeURIComponent(title);
@@ -47,7 +52,7 @@ function getData() {
         url += "s=" + title;
     }
     else {
-        url += "s=" + title + "&y=" + year;
+        url += "s=" + title + "&y=" + year + "&page=" + pageIndex;
     }
 
     console.log(url);
@@ -67,6 +72,9 @@ function jsonLoaded(obj) {
 
     let termID = "tlp6760-term";
     localStorage.setItem(termID, displayTerm);
+
+    localStorage.setItem("tlp6760-pageIndex", pageIndex);
+    localStorage.setItem("tlp6760-year", displayYear);
 
     window.open(RESULTS_URL, "_self");
 }
@@ -287,4 +295,61 @@ function goToMovie() {
     localStorage.setItem(titleID, title);
 
     window.open(MOVIE_URL, "_self");
+}
+
+function tickPages(){
+
+    pageIndex = localStorage.getItem("tlp6760-pageIndex");
+    pageIndex = parseInt(pageIndex);
+
+    if (pageIndex == undefined){
+        pageIndex = 1; 
+    }
+
+    if (this.id = "leftArrow"){
+        if (pageIndex != 1){
+            pageIndex-=1;
+        }
+    }
+    else if(this.id = "rightArrow"){
+        pageIndex+=1;
+    }
+
+    localStorage.setItem("tlp6760-pageIndex", pageIndex);
+
+    loadNewPage();
+}
+
+function loadNewPage(){
+    const OMDB_URL = "https://www.omdbapi.com/?apikey=fbf8855f&";
+
+    url = OMDB_URL;
+
+    let title = localStorage.getItem("tlp6760-term");
+
+    let year = localStorage.getItem("tlp6760-year");
+
+    pageIndex = localStorage.getItem("tlp6760-pageIndex");
+
+    if (title.length < 1) return;
+
+    while (title.includes("%20")) {
+        title = title.replace("%20", "+");
+    }
+
+    if (year.length < 1) {
+        url += "s=" + title + "&page=" + pageIndex;
+    }
+    else {
+        url += "s=" + title + "&y=" + year + "&page=" + pageIndex;
+    }
+
+    console.log(url);
+
+    $.ajax({
+        dataType: "json",
+        url: url,
+        data: null,
+        success: jsonLoaded
+    });
 }
