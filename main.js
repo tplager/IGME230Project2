@@ -91,22 +91,34 @@ function resultsLoaded() {
     console.log("results.length = " + results.length);
     document.querySelector(".container").innerHTML = "<p><i>Here are " + results.length + " results for '" + displayTerm + "'</i></p>";
 
-    let bigString = "";
+    //let bigString = "";
+    let section = document.createElement("div");
+    section.className = "row";
+
+    let section2 = document.createElement("div");
+    section2.className = "row";
 
     for (let i = 0; i < results.length; i++) {
+
         let result = results[i];
 
         let posterURL = result.Poster;
         if (!posterURL) posterURL = "media/no-image-found.png";
         let title = result.Title;
 
-        let line = `<div class = 'result' title = '${title}'><img src = '${posterURL}' title = '${title}' />`;
+        let line = `<div class = 'result col-sm-2' title = '${title}'><img src = '${posterURL}' title = '${title}' />`;
         line += `<span><p>'${title}'</p></span></div>`;
 
-        bigString += line;
+        if (i >= 0 && i < 5) {
+            section.innerHTML += line;
+        }
+        else if (i >= 5 && i < 10) {
+            section2.innerHTML += line;
+        } 
+        //bigString += line;
     }
-
-    document.querySelector(".container").innerHTML += bigString;
+    document.querySelector(".container").appendChild(section);
+    document.querySelector(".container").appendChild(section2);
 
     let movieResults = document.querySelectorAll(".result");
     for (let i = 0; i < movieResults.length; i++) {
@@ -117,7 +129,7 @@ function resultsLoaded() {
 function getMovieData() {
     const OMDB_URL = "https://www.omdbapi.com/?apikey=fbf8855f&";
 
-    url = OMDB_URL;
+    url = OMDB_URL; 
 
     let titleID = "tlp6760-movie-title";
     let title = localStorage.getItem(titleID);
@@ -154,12 +166,10 @@ function loadMovie(obj) {
     let img = document.createElement("img");
     img.src = obj.Poster;
     img.className = "poster";
-    
+
     // Image styling
     img.style.cssFloat = "right";
     img.style.display = "block";
-    //img.style.width = "300px";
-    //img.style.margin = "auto";
 
     main.appendChild(img);
     if (obj.Ratings.length > 1) {
@@ -169,13 +179,9 @@ function loadMovie(obj) {
         ratingsTitle.innerHTML = "Ratings";
         main.appendChild(ratingsTitle);
 
-        // Ratings title styling
-       // ratingsTitle.style.paddingLeft = "400px";
-
         // Creating the list of ratings
         let ratings = document.createElement("ul");
         ratings.className = "list-group w-25";
-        
 
         // Adding ratings to the list
         let rottenTomatoes = document.createElement("li");
