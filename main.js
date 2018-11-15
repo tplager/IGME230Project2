@@ -98,7 +98,7 @@ function resultsLoaded() {
 
     let results = obj.Search;
     console.log("results.length = " + results.length);
-    document.querySelector(".container").innerHTML = "<p><i>Here are " + results.length + " results for '" + displayTerm + "'</i></p>";
+    document.querySelector("#results").innerHTML = "<p style = 'font-size: 32pt; font-weight: bold;'>Here are " + results.length + " results for '" + displayTerm + "'</p>";
 
     //let bigString = "";
     let section = document.createElement("div");
@@ -115,8 +115,8 @@ function resultsLoaded() {
         if (!posterURL) posterURL = "media/no-image-found.png";
         let title = result.Title;
 
-        let line = `<div class = 'result col-sm-2' title = '${title}'><img src = '${posterURL}' title = '${title}' />`;
-        line += `<span><p>'${title}'</p></span></div>`;
+        let line = `<div class = 'result col ml-1 mr-1 mb-2' title = '${title}' style = 'border: 4px solid red; border-radius: 10px;'><img class = 'pt-4' src = '${posterURL}' title = '${title}' alt = '${title} poster' style = 'width: 300px; height: 450px;'/>`;
+        line += `<span><p class = 'pt-2' style = 'font-size: 14pt; font-weight: bold;'>${title}</p></span></div>`;
 
         if (i >= 0 && i < 5) {
             section.innerHTML += line;
@@ -126,8 +126,8 @@ function resultsLoaded() {
         } 
         //bigString += line;
     }
-    document.querySelector(".container").appendChild(section);
-    document.querySelector(".container").appendChild(section2);
+    document.querySelector("#results").appendChild(section);
+    document.querySelector("#results").appendChild(section2);
 
     let movieResults = document.querySelectorAll(".result");
     for (let i = 0; i < movieResults.length; i++) {
@@ -179,6 +179,7 @@ function loadMovie(obj) {
     // Image styling
     img.style.cssFloat = "right";
     img.style.display = "block";
+    img.className = "ml-2 mb-2"
 
     main.appendChild(img);
     if (obj.Ratings.length > 1) {
