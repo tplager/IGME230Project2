@@ -19,8 +19,7 @@ i {
 body {
     background: linear-gradient(to bottom, rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(184,186,198,1) 49%,rgba(221,223,227,1) 80%,rgba(245,246,246,1) 100%); 
 }
-
-#resultsPage{
+/*#resultsPage{
     margin-left: 30%;
     margin-right: 30%;
     margin-top: 5px;
@@ -29,4 +28,4 @@ body {
     margin-left: 20%;
     margin-right: 20%;
     margin-top: -67px;
-}
+}*/

@@ -102,7 +102,7 @@ function resultsLoaded() {
     // "Here are your search results"
     let results = obj.Search;
     console.log("results.length = " + results.length);
-    document.querySelector(".container").innerHTML = "<p><i>Here are " + results.length + " results for '" + displayTerm + "'</i></p>";
+    document.querySelector("#results").innerHTML = "<p style = 'font-size: 32pt; font-weight: bold;'>Here are " + results.length + " results for '" + displayTerm + "'</p>";
 
     // Creating rows
     let section = document.createElement("div");
@@ -120,9 +120,8 @@ function resultsLoaded() {
         if (!posterURL) posterURL = "media/no-image-found.png";
         let title = result.Title;
 
-        // Setting result
-        let line = `<div class = 'result col-sm-2' title = '${title}'><img src = '${posterURL}' title = '${title}' />`;
-        line += `<span><p>'${title}'</p></span></div>`;
+        let line = `<div class = 'result col ml-1 mr-1 mb-2' title = '${title}' style = 'border: 4px solid red; border-radius: 10px;'><img class = 'pt-4' src = '${posterURL}' title = '${title}' alt = '${title} poster' style = 'width: 300px; height: 450px;'/>`;
+        line += `<span><p class = 'pt-2' style = 'font-size: 14pt; font-weight: bold;'>${title}</p></span></div>`;
 
         // Adding to the rows, 5 in each
         if (i >= 0 && i < 5) {
@@ -132,8 +131,8 @@ function resultsLoaded() {
             section2.innerHTML += line;
         }
     }
-    document.querySelector(".container").appendChild(section);
-    document.querySelector(".container").appendChild(section2);
+    document.querySelector("#results").appendChild(section);
+    document.querySelector("#results").appendChild(section2);
 
     // User selecting a movie
     let movieResults = document.querySelectorAll(".result");
@@ -179,7 +178,7 @@ function loadMovie(obj) {
 
     let img = document.createElement("img");
     img.src = obj.Poster;
-    img.className = "poster";
+    img.className = "poster ml-2 mb-2";
 
     // Image styling
     img.style.cssFloat = "right";
