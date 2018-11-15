@@ -3,6 +3,7 @@ window.onload = setEvents;
 function setEvents() {
     if (document.querySelector("#submit") != null) {
         document.querySelector("#submit").onclick = getData;
+        document.querySelector("#titleSearch").addEventListener("keyup", getOnEnter);
     }
     else if (document.querySelector("#resultsTitle") != null) {
         document.querySelector("#searchPage").onclick = goToSearch;
@@ -346,4 +347,10 @@ function loadNewPage(){
         data: null,
         success: jsonLoaded
     });
+}
+
+function getOnEnter(e){
+    if (e.keyCode === 13) {
+        getData();
+    }
 }
