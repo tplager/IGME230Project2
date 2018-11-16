@@ -1757,10 +1757,9 @@ pre code {
   }
 
   .display-4 {
-    font-size: 2.5rem; 
+    font-size: 1.5rem; 
   }
 }
-
 @media (max-width: 767.98px) {
   .table-responsive-md {
     display: block;
@@ -1771,6 +1770,10 @@ pre code {
   }
   .table-responsive-md > .table-bordered {
     border: 0;
+  }
+
+  .display-4 {
+    font-size: 2.8rem;
   }
 }
 

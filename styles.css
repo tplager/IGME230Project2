@@ -38,8 +38,8 @@ body {
 }
 #docHeading{
     text-align: center;
-    text-decoration: underline;
     padding: 20px;
+    margin-top: 25px; 
 }
 
 #documentation {
@@ -56,6 +56,10 @@ a:link{
 }
 a:visited{
     color: #C21807;
+}
+
+#movieTitle {
+    margin-top: 45px; 
 }
 
 @media only screen and (max-width: 1200px){
@@ -86,9 +90,19 @@ a:visited{
         float: right; 
     }
 }
-@media only screen and (max-width: 585px){
+@media only screen and (max-width: 715px){
     i {
-        font-size: 70px; 
+        font-size: 65px; 
+    }
+}
+@media only screen and (max-width: 685px){
+    i {
+        font-size: 60px; 
+    }
+}
+@media only screen and (max-width: 575px){
+    i {
+        font-size: 50px; 
     }
 }
 @media only screen and (max-width: 555px){
@@ -101,7 +115,7 @@ a:visited{
     }
 
     i {
-        font-size: 50px; 
+        font-size: 40px; 
     }
 
     #poster { 
