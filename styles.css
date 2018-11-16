@@ -33,6 +33,31 @@ body {
     float: right; 
 }
 
+#searchPage{
+    margin: 0 auto;
+}
+#docHeading{
+    text-align: center;
+    text-decoration: underline;
+    padding: 20px;
+}
+
+#documentation{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.doc{
+    padding: 3px;
+}
+
+a:link{
+    color: #FF2400;
+}
+a:visited{
+    color: #C21807;
+}
+
 @media only screen and (max-width: 1200px){
     #plot, #info {
         width: 500px; 
@@ -89,5 +114,4 @@ body {
         text-align: center; 
     }
 }
-
 

@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
-    <title>Movie Searcher Home</title>
+    <title>Entertainment Finder Home</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="main.js"></script>
 
@@ -18,11 +18,13 @@
 </head>
 
 <body>
+
     <header class="text-center container-fluid">
         <i id="leftFilm" class="fas fa-film float-left ml-2 mt-2"></i>
-        <h1 class="d-inline-block mt-3 display-4">Movie Searcher</h1>
+        <h1 class="d-inline-block mt-3 display-4">Entertainment Finder</h1>
         <i id="rightFilm" class="fas fa-film float-right mr-2 mt-2"></i>
     </header>
+
     <nav class="navbar navbar-expand navbar-dark bg-danger mt-3">
         <ul class="nav navbar-nav container-fluid row text-center">
             <li class="nav-item active col-sm"><a class="nav-link active" href="index.html">Search <span class="sr-only">(current)</span></a></li>
@@ -31,25 +33,33 @@
             <li class="nav-item col-sm"><a class="nav-link" href="documentation.html">Documentation</a></li>
         </ul>
     </nav>
+
     <main class="container-fluid d-inline align-middle">
+
         <section class="text-center mt-5 mb-5">
             <h2>Search for a Movie or Show</h2>
             <h5 class="mt-4">A title is required to search</h5>
             <h5 class="mb-4">A year is not required</h5>
         </section>
+
         <section class="mb-4 text-center row">
+
             <div class="col">
                 <h2 id="Title">Title</h2>
-                    <input class="searchBar" id="titleSearch" type="text" placeholder="Search..." name="searchTitle">
+                <input class="searchBar" id="titleSearch" type="text" placeholder="Search..." name="searchTitle">
             </div>
+
             <div class="col">
                 <h2 id="Year">Year</h2>
-                    <input class="searchBar" id="yearSearch" type="text" placeholder="Search..." name="searchYear">
+                <input class="searchBar" id="yearSearch" type="text" placeholder="Search..." name="searchYear">
             </div>
+
         </section>
+
         <div class="container-fluid text-center">
             <button class="button btn btn-danger btn-lg" id="submit" type="submit">Submit</button>
         </div>
+
     </main>
 </body>
 
