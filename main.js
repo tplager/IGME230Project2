@@ -120,7 +120,7 @@ function resultsLoaded() {
         if (!posterURL) posterURL = "media/no-image-found.png";
         let title = result.Title;
 
-        let line = `<div class = 'result col ml-1 mr-1 mb-2' title = '${title}' style = 'border: 4px solid red; border-radius: 10px;'><img class = 'pt-4' src = '${posterURL}' title = '${title}' alt = '${title} poster' style = 'width: 300px; height: 450px;'/>`;
+        let line = `<div class = 'result col ml-1 mr-1 mb-2' title = '${title}' style = 'border: 4px solid red; border-radius: 10px;'><img class = 'pt-4' src = '${posterURL}' title = '${title}' alt = '${title} poster' style = 'width: 250px; height: 375px;'/>`;
         line += `<span><p class = 'pt-2' style = 'font-size: 14pt; font-weight: bold;'>${title}</p></span></div>`;
 
         // Adding to the rows, 5 in each
