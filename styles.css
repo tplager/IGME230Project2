@@ -42,7 +42,7 @@ body {
     padding: 20px;
 }
 
-.documentation{
+#documentation {
     width: 50%;
     margin: 0 auto;
 }
@@ -63,7 +63,7 @@ a:visited{
         width: 500px; 
     }
 
-    .documentation {
+    #documentation {
         width: 80%; 
     }
 }
