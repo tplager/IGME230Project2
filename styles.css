@@ -1,41 +1,3 @@
-/* 
-body {
-    background-color: white;
-}
-
-h1 {
-    text-align: center;
-}
-
-h2 {
-    text-align: center;
-}
-
-h3{
-    text-align: center;
-}
-
-#leftFilm{
-    font-size: 60px;
-    float: left;
-    position: relative;
-}
-
-#rightFilm{
-    font-size: 60px;
-    float: right;
-    position: relative;
-}
-
-#submit{
-    margin: 15px;
-}
-
-.container{
-    text-align: center;
-}
-*/
-
 i {
     font-size: 80px;
 }
@@ -57,13 +19,75 @@ i {
 body {
     background: linear-gradient(to bottom, rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(184,186,198,1) 49%,rgba(221,223,227,1) 80%,rgba(245,246,246,1) 100%); 
 }
-/*#resultsPage{
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-top: 5px;
+
+#ratings {
+    width: 25%; 
 }
-#searchPage{
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: -67px;
-}*/
+
+#plot, #info {
+    width: 600px; 
+    padding: 5px; 
+}
+
+#poster {
+    float: right; 
+}
+
+@media only screen and (max-width: 1200px){
+    #plot, #info {
+        width: 500px; 
+    }
+}
+@media only screen and (max-width: 1000px){
+    #plot, #info, #ratings { 
+        width: 300px; 
+    }
+}
+@media only screen and (max-width: 770px){
+    #plot, #ratings{
+        width: 200px; 
+    }
+
+    #plot {
+        float: left; 
+        padding-bottom: 29.5px; 
+    }
+
+    #info {
+        float: right; 
+    }
+}
+@media only screen and (max-width: 585px){
+    i {
+        font-size: 70px; 
+    }
+}
+@media only screen and (max-width: 555px){
+    #info, #plot {
+        float: none; 
+    }
+
+    #info, #plot, #ratings {
+        width: 100%; 
+    }
+
+    i {
+        font-size: 50px; 
+    }
+
+    #poster { 
+        float: none; 
+        width:95%; 
+    }
+
+    #imgContainer {
+        width: 65%; 
+        margin: 0 auto; 
+    }
+
+    h3 {
+        text-align: center; 
+    }
+}
+
+

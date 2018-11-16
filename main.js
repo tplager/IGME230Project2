@@ -172,16 +172,19 @@ function loadMovie(obj) {
 
     let main = document.querySelector(".container");
 
+    let imgContainer = document.createElement("div");
+    imgContainer.id = "imgContainer"; 
+
     let img = document.createElement("img");
     img.src = obj.Poster;
-    img.className = "poster";
+    img.id = "poster";
 
     // Image styling
-    img.style.cssFloat = "right";
     img.style.display = "block";
     img.className = "ml-2 mb-2"
-
-    main.appendChild(img);
+    
+    imgContainer.appendChild(img);
+    main.appendChild(imgContainer);
     if (obj.Ratings.length > 1) {
 
         // Creating ratings header
@@ -191,7 +194,8 @@ function loadMovie(obj) {
 
         // Creating the list of ratings
         let ratings = document.createElement("ul");
-        ratings.className = "list-group w-25";
+        ratings.className = "list-group";
+        ratings.id = "ratings";
 
         // Adding ratings to the list
         let rottenTomatoes = document.createElement("li");
@@ -234,24 +238,25 @@ function loadMovie(obj) {
     main.appendChild(description);
 
     // Description styling
-    description.style.width = "600px";
+    //description.style.width = "600px";
     description.style.border = "1px solid";
     description.style.borderColor = "rgba(0,0,0,0.125)";
     description.style.borderRadius = ".25rem";
     description.style.backgroundColor = "#FFF";
     description.style.marginTop = "5px";
     description.style.marginBottom = "5px";
-    description.style.padding = "5px";
+    //description.style.padding = "5px";
 
     let info = document.createElement("section");
+    info.id = "info"; 
     info.className = "row";
     info.style.border = "1px solid";
     info.style.borderColor = "rgba(0,0,0,0.125)";
     info.style.borderRadius = ".25rem";
     info.style.backgroundColor = "#FFF";
-    info.style.width = "600px";
+    //info.style.width = "600px";
     info.style.margin = "0";
-    info.style.padding = "5px";
+    //info.style.padding = "5px";
 
     let esrbRating = document.createElement("p");
     esrbRating.className = "col";
