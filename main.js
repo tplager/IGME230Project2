@@ -225,7 +225,9 @@ function loadMovie(obj) {
 
         // Only IMDB
         let ratings = document.createElement("ul");
+        ratings.className = "list-group w-25";
         let imdb = document.createElement("li");
+        imdb.className = "list-group-item";
         imdb.innerHTML = "IMDb: " + obj.Ratings[0].Value;
         ratings.appendChild(imdb);
         main.appendChild(ratings);
